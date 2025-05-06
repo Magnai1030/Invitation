@@ -1,6 +1,6 @@
-import InfoContainer from "@/Containers/InfoContainer";
-import TextContainer from "@/Containers/TextContainer";
-import TypeContainer from "@/Containers/TypeContainer";
+import InfoContainer from "@/containers/InfoContainer";
+import TextContainer from "@/containers/TextContainer";
+import TypeContainer from "@/containers/TypeContainer";
 import useData from "@/hooks/useData";
 import { PageType } from "@/types";
 import { Philosopher, Montserrat_Alternates } from "next/font/google";
@@ -9,13 +9,11 @@ import { ReactNode } from "react";
 const philosopherSans = Philosopher({
   variable: "--font-philosopher-sans",
   weight: "700",
-  subsets: ["latin"],
 });
 
 const montserratMono = Montserrat_Alternates({
   variable: "--font-montserrat-alternates",
   weight: "600",
-  subsets: ["cyrillic"],
 });
 
 const Home = () => {
@@ -27,7 +25,7 @@ const Home = () => {
   };
   return (
     <div
-      className={`${philosopherSans.className} ${montserratMono.className} font-[family-name:var(--font-philosopher-sans)]`}
+      className={`${philosopherSans.variable} ${montserratMono.className} font-[var(--font-montserrat-alternates)]`}
     >
       <main className="w-full h-screen">
         {PAGE_RENDER[pageType]}

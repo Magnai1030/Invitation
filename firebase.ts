@@ -1,33 +1,27 @@
-
 // firebase.js
-import { initializeApp, getApp, getApps } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
-
+import { initializeApp, getApps, FirebaseApp } from "firebase/app";
+import { Firestore, getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDa6QNlzxW3iIS1Hg3PJXDKV9b0wzN6svM",
-  authDomain: "invitation-8a9c8.firebaseapp.com",
-  projectId: "invitation-8a9c8",
-  storageBucket: "invitation-8a9c8.firebasestorage.app",
-  messagingSenderId: "889987340560",
-  appId: "1:889987340560:web:d6308524543bea5dfa6d95",
+  apiKey: process.env.YOUR_API_KEY,
+  authDomain: process.env.YOUR_AUTH_DOMAIN,
+  projectId: process.env.YOUR_PROJECT_ID,
+  storageBucket: process.env.YOUR_STORAGE_BUCKET,
+  messagingSenderId: process.env.YOUR_MESSAGING_SENDER_ID,
+  appId: process.env.YOUR_APP_ID,
 };
 
-// YOUR_API_KEY="AIzaSyDa6QNlzxW3iIS1Hg3PJXDKV9b0wzN6svM"
-// YOUR_AUTH_DOMAIN="invitation-8a9c8.firebaseapp.com"
-// YOUR_PROJECT_ID="invitation-8a9c8"
-// YOUR_STORAGE_BUCKET="invitation-8a9c8.firebasestorage.app"
-// YOUR_MESSAGING_SENDER_ID="889987340560"
-// YOUR_APP_ID="1:889987340560:web:d6308524543bea5dfa6d95"
+let firebaseApp: FirebaseApp;
+let firestore: Firestore;
 
-let app;
+// Check if Firebase is already initialized to avoid duplicates during hot reloads
 if (!getApps().length) {
-  app = initializeApp(firebaseConfig);
+  firebaseApp = initializeApp(firebaseConfig);
 } else {
-  app = getApp(); // if already initialized, use that one
+  firebaseApp = getApps()[0];
 }
 
-const db = getFirestore(app);
+// Initialize Firestore
+firestore = getFirestore(firebaseApp);
 
-export { db, firebaseConfig };
-
+export { firebaseApp, firestore };
