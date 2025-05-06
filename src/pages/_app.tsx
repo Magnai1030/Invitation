@@ -1,6 +1,11 @@
+import { DataProvider } from "@/providers";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+import { Toaster } from "sonner";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (<DataProvider>
+    <Component {...pageProps} />
+    <Toaster />
+  </DataProvider>)
 }
