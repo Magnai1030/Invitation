@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import InfoContainer from "@/Containers/InfoContainer";
 import TextContainer from "@/Containers/TextContainer";
 import TypeContainer from "@/Containers/TypeContainer";
@@ -29,6 +30,7 @@ const Home = () => {
     <div
       className={`${philosopherSans.variable} ${montserratMono.className} font-[var(--font-montserrat-alternates)]`}
     >
+      <SEO />
       <main className="w-full h-screen">
         {PAGE_RENDER[pageType]}
       </main>
