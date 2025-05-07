@@ -9,11 +9,13 @@ import { ReactNode } from "react";
 const philosopherSans = Philosopher({
   variable: "--font-philosopher-sans",
   weight: "700",
+  subsets: ["cyrillic"],
 });
 
 const montserratMono = Montserrat_Alternates({
   variable: "--font-montserrat-alternates",
   weight: "600",
+  subsets: ["cyrillic"],
 });
 
 const Home = () => {
