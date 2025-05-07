@@ -18,9 +18,9 @@ const InfoContainer = () => {
     }
 
     return <><div
-        className={`bg-${PERSON_TYPE_COLOR[personType!]} flex justify-center place-items-center h-screen px-5 py-4 cursor-pointer`} onClick={onPressSendInfo}
+        className={`bg-${PERSON_TYPE_COLOR[personType!]} flex justify-center h-screen cursor-pointer overflow-scroll`} onClick={onPressSendInfo}
     >
-        <main className="bg-orange-100 h-full w-[794] relative overflow-hidden flex justify-center place-items-center">
+        <main className="bg-orange-100 w-[794] h-screen min-h-[900] relative flex justify-center place-items-center">
             <TopView />
             <DecorationView />
             <InfoView />

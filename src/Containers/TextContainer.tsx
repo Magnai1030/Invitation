@@ -1,6 +1,6 @@
 import useData from "@/hooks/useData";
 import { PageType, PERSON_TYPE_COLOR, PERSON_TYPE_TEXT_COLOR } from "@/types";
-import { FC, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 
 const TextContainer = () => {
@@ -10,18 +10,19 @@ const TextContainer = () => {
     useEffect(() => {
         const typed = new Typed(el.current, {
             strings: [
-                'Ерөөл учрал бүрдсэн',
-                'Ертөнцийн энэ сайхан өдөр',
-                'Өөдөө бадарсан галаа асааж',
-                'Наран хотолсон халуун голомтондоо',
-                'Хүндэт зочдоо өөдөө залъя',
-                'Урин залсан бидний буян заяа тэгширч',
-                'Уригдсан түмэн олны өлмий бат оршиг'
+                `Ерөөл учрал бүрдсэн<br>
+                Ертөнцийн энэ сайхан өдөр<br>
+                Өөдөө бадарсан галаа асааж<br>
+                Наран хотолсон халуун голомтондоо<br>
+                Хүндэт зочдоо өөдөө залъя<br>
+                Урин залсан бидний буян заяа тэгширч<br>
+                Уригдсан түмэн олны өлмий бат оршиг<br>`,
+                ''
             ],
             typeSpeed: 50,
             startDelay: 1000,
-            backSpeed: 10,
-            backDelay: 500,
+            backSpeed: 1,
+            backDelay: 1000,
             loop: false,
             showCursor: false,
             onComplete: onComplete
@@ -42,6 +43,6 @@ const TextContainer = () => {
         setPageType(PageType.INFO_PAGE)
     }
 
-    return <div className={`w-full h-full flex justify-center place-items-center p-8 bg-${PERSON_TYPE_COLOR[personType!]} cursor-pointer`} onClick={onPressEnd}><span ref={el} className={`text-${PERSON_TYPE_TEXT_COLOR[personType!]} text-4xl text-center`} /></div>
+    return <div className={`w-full h-full flex justify-center place-items-center p-8 bg-${PERSON_TYPE_COLOR[personType!]} cursor-pointer`} onClick={onPressEnd}><span ref={el} className={`text-${PERSON_TYPE_TEXT_COLOR[personType!]} text-4xl text-left`} /></div>
 }
 export default TextContainer
