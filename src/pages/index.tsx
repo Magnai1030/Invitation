@@ -1,6 +1,6 @@
-import InfoContainer from "@/containers/InfoContainer";
-import TextContainer from "@/containers/TextContainer";
-import TypeContainer from "@/containers/TypeContainer";
+import InfoContainer from "@/Containers/InfoContainer";
+import TextContainer from "@/Containers/TextContainer";
+import TypeContainer from "@/Containers/TypeContainer";
 import useData from "@/hooks/useData";
 import { PageType } from "@/types";
 import { Philosopher, Montserrat_Alternates } from "next/font/google";

@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
-import ModalInfoContainer from "@/containers/ModalInfoContainer";
-import ModalSelectContainer from "@/containers/ModalSelectContainer";
+import ModalInfoContainer from "@/Containers/ModalInfoContainer";
+import ModalSelectContainer from "@/Containers/ModalSelectContainer";
 
 type Props = {
   isOpen: boolean;
