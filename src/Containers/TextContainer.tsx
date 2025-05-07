@@ -43,6 +43,6 @@ const TextContainer = () => {
         setPageType(PageType.INFO_PAGE)
     }
 
-    return <div className={`w-full h-full flex justify-center place-items-center p-8 bg-${PERSON_TYPE_COLOR[personType!]} cursor-pointer`} onClick={onPressEnd}><span ref={el} className={`text-${PERSON_TYPE_TEXT_COLOR[personType!]} text-4xl text-left`} /></div>
+    return <div className={`w-full h-full flex justify-center place-items-center p-8 bg-${PERSON_TYPE_COLOR[personType!]} cursor-pointer`} onClick={onPressEnd}><span ref={el} className={`text-${PERSON_TYPE_TEXT_COLOR[personType!]} text-xl md:text-4xl text-left`} /></div>
 }
 export default TextContainer
